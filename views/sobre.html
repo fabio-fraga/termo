@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo - Sobre</title>
+    <link rel="stylesheet" href="../styles/sobre.css">
+</head>
+<body id="body" class="codorna">
+    <h1>Você acessou a página sobre.</h1>
+
+    <a class="back" href="../index.html">Voltar ao menu</a>
+
+    <a id="otherLink" href="">Outro link</a>
+
+    <button onclick="trocarBackground()">Trocar background</button>
+
+    <script>        
+        function trocarBackground() {
+            const body = document.getElementById("body")
+
+            const imgs = [
+                "../public/codorna.avif",
+                "https://p16-sign-va.tiktokcdn.com/obj/tos-maliva-p-0068/81903c483d6f47c398ee763e61c2b09d_1689303465?lk3s=81f88b70&x-expires=1749693600&x-signature=pcAVjkDnKjf8mg2xZS%2FdIDw%2F%2B8I%3D&shp=81f88b70&shcp=-"
+            ]
+
+            let index = 0
+
+            if (body.className == "codorna") {
+                index = 1
+
+                body.className = "mario"
+            } else {
+                index = 0
+
+                body.className = "codorna"
+            }
+
+            body.style.backgroundImage = `url(${imgs[index]})`
+        }
+    </script>
+</body>
+</html>
